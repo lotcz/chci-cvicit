@@ -2,7 +2,7 @@ PROJ_DIR = /var/www/chci-cvicit/
 APACHE_CONF_DIR = /etc/apache2/sites-available/
 
 install:	
-	cp $(PROJ_DIR)prezentace/chci-cvicit-prezentace.conf $(APACHE_CONF_DIR)
+	cp $(PROJ_DIR)chci-cvicit-prezentace.conf $(APACHE_CONF_DIR)
 	a2ensite chci-cvicit-prezentace
 	service apache2 restart
 	
