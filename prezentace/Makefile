@@ -1,11 +1,11 @@
-PROJ_PATH = /var/www/chci-cvicit/
-GIT_REPO = https://github.com/lotcz/chci-cvicit.git
+PROJ_DIR = /var/www/chci-cvicit/
+APACHE_CONF_DIR = /etc/apache2/sites-available/
 
-install:
-	mkdir $(PROJ_PATH)
-	cd $(PROJ_PATH)
-	git clone $(GIT_REPO)
+install:	
+	cp $(PROJ_DIR)prezentace/chci-cvicit-prezentace.conf $(APACHE_CONF_DIR)
+	a2ensite chci-cvicit-prezentace
+	service apache2 restart
 	
 update:
-	cd $(PROJ_PATH)
+	cd $(PROJ_DIR)
 	git pull
